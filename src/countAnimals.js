@@ -7,10 +7,11 @@ function countAnimals(animal) {
   }
   if (Object.keys(animal).includes('sex')) {
     return species.find((individual) => Object.values(animal)
-      .includes(individual.name)).residents.filter((gender) => (animal.sex === gender.sex)).length;
+      .includes(individual.name)).residents
+      .filter((gender) => (animal.sex === gender.sex)).length;
   }
-  return species.find((individual) => Object.values(animal).includes(individual.name))
-    .residents.length;
+  return species.find((individual) => Object.values(animal)
+    .includes(individual.name)).residents.length;
 }
 
 module.exports = countAnimals;
