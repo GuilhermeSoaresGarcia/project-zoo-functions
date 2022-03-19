@@ -1,22 +1,15 @@
 const data = require('../data/zoo_data');
 
-// const pessoas = [
-//   { name: 'João', age: 5 },
-//   { name: 'Pedro', age: 5 },
-//   { name: 'Guilherme', age: 5 },
-//   { name: 'Maria', age: 18 },
-//   { name: 'Angelica', age: 18 },
-//   { name: 'Antonio', age: 50 },
-// ];
-
 function countEntrants(entrants) {
   if (entrants.length > 0) {
-    const totalDeVisitantes = { adult: 0, child: 0, senior: 0 };
-    totalDeVisitantes.adult = entrants.filter((person) => person.age > 17
-    && person.age < 50).length;
-    totalDeVisitantes.child = entrants.filter((person) => person.age < 18).length;
-    totalDeVisitantes.senior = entrants.filter((person) => person.age > 49).length;
-    return totalDeVisitantes;
+    const allVisitors = { adult: 0, child: 0, senior: 0 };
+
+    allVisitors.adult = entrants.filter((person) => person.age > 17
+      && person.age < 50).length;
+    allVisitors.child = entrants.filter((person) => person.age < 18).length;
+    allVisitors.senior = entrants.filter((person) => person.age > 49).length;
+
+    return allVisitors;
   }
 }
 
@@ -25,9 +18,20 @@ function calculateEntry(entrants) {
   if (!entrants || Object.entries(entrants).length === 0) {
     return 0;
   }
-}
+  const quantityByAgeGroup = [countEntrants(entrants)];
+  const { prices } = data;
+  const arrayOfPrices = [prices];
 
-// countEntrants(pessoas);
-// console.log(calculateEntry(pessoas));
+  const adultTotal = Number(quantityByAgeGroup.map((person) => person.adult * arrayOfPrices
+    .map((price) => price.adult)));
+  const childTotal = Number(quantityByAgeGroup.map((person) => person.child * arrayOfPrices
+    .map((price) => price.child)));
+  const seniorTotal = Number(quantityByAgeGroup.map((person) => person.senior * arrayOfPrices
+    .map((price) => price.senior)));
+
+  const totalSum = adultTotal + childTotal + seniorTotal;
+
+  return totalSum;
+}
 
 module.exports = { calculateEntry, countEntrants };
