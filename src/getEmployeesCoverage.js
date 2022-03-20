@@ -19,12 +19,14 @@ function noParametersResult() {
 
 function getEmployeesCoverage(info) {
   if (!info) return noParametersResult();
-  if (info Object.values(info)[0])
+
   const employee = employees.find((person) => person.id === Object.values(info)[0]
     || person.firstName === Object.values(info)[0]
     || person.lastName === Object.values(info)[0]);
-  const animal = species.filter((individual) => employee.responsibleFor.includes(individual.id));
 
+  if (employee === undefined) throw new Error('Informações inválidas');
+
+  const animal = species.filter((individual) => employee.responsibleFor.includes(individual.id));
   const result = {
     id: `${employee.id}`,
     fullName: `${employee.firstName} ${employee.lastName}`,
@@ -34,9 +36,5 @@ function getEmployeesCoverage(info) {
 
   return result;
 }
-
-// console.log(getEmployeesCoverage());
-console.log(getEmployeesCoverage({ name: 'Sharonda' }));
-// console.log(getEmployeesCoverage({ name: 'Guilherme' }));
 
 module.exports = getEmployeesCoverage;
