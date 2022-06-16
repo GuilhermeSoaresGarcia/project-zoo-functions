@@ -15,5 +15,6 @@ Este projeto propunha a utilização de métodos específicos para manipulação
 
 ## Executando aplicação
 ```
-Os exercícios estão divididos em scripts, basta executá-los individualmente.
+Os exercícios estão divididos em scripts no diretório "src",
+basta executá-los individualmente.
 ```
