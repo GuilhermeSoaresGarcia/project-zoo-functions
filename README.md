@@ -1,16 +1,19 @@
-# 🚧 README em construção 🚧
+# Zoo Functions Project
 
-<!-- Olá, Tryber!
+# Contexto
+Este projeto propunha a utilização de métodos específicos para manipulação de arrays no JavaScript (ES6), conhecidos como "high order functions".
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+>Utilizar as Higher Order Functions para manipular e criar arrays;
 
-É essencial que você preencha esse documento por conta própria, ok?
+> Escolher a Higher Order Function mais adequada para a obtenção de um  resultado esperado;
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+> Aprender a usar de forma conjunta as Higher Order Functions;
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+## Técnologias usadas
 
--->
+> Desenvolvido usando: JavaScript (ES6) puro.
+
+## Executando aplicação
+```
+Os exercícios estão divididos em scripts, basta executá-los individualmente.
+```
